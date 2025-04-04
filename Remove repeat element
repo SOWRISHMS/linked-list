@@ -1,0 +1,63 @@
+class node
+{
+    int data;
+    node next;
+    node(int data)
+    {
+        this.data=data;
+    }
+}
+public class Remove
+{
+    public static void main(String[] args) {
+
+
+        int[] arr = {1, 1,1,1,2, 2, 3,4,4,4,4,4,4,4,4,4,4,4,4, 4, 5};
+        node head = new node(arr[0]);
+        node temp=head;
+        for (int i = 1; i < arr.length; i++)
+        {
+          temp.next=new node(arr[i]);
+          temp=temp.next;
+        }
+        node temp1=head;
+        while(temp1!=null)
+        {
+            System.out.print(temp1.data+"->");
+            temp1=temp1.next;
+        }
+        System.out.print("null\n");
+
+
+        node was=new node(1);
+        was.next=head;
+        node prev=was;
+        temp=head;
+
+        while(temp!=null)
+        {
+            if(temp.next!=null&&temp.data==temp.next.data)
+            {
+                while(temp.next!=null&&temp.data==temp.next.data)
+                {
+                    temp=temp.next;
+                }
+                prev.next=temp.next;
+            }
+            else {
+                prev=temp;
+            }
+            temp=temp.next;
+        }
+        temp1=was.next;
+
+        while(temp1!=null)
+        {
+            System.out.print(temp1.data+"->");
+            temp1=temp1.next;
+        }
+        System.out.print("null\n");
+
+
+    }
+}
