@@ -16,5 +16,5 @@ This repository contains various Java programs that demonstrate the implementati
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/SOWRISH M S/linked-list-java.git
+git clone https://github.com/SOWRISHMS/linked-list-java.git
 cd linked-list-java
